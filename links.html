@@ -29,7 +29,7 @@ small{color:#666}
 <body>
 <main>
   <h1>Invitation Link Maker</h1>
-  <p class="s">Type each guest's name. You get a personal WhatsApp invitation in Marathi and English for each one.</p>
+  <p class="s">Type each guest's name. You get one personal link and WhatsApp message for each one.</p>
 
   <label for="base">Invitation website</label>
   <input id="base" disabled>
@@ -47,13 +47,11 @@ var $=function(i){return document.getElementById(i)};
 $('base').value=BASE;
 
 // Fixed WhatsApp message (Marathi + English, each with its own link)
-function message(name,mr,en){
+function message(name,link){
   return name+",\n"+
     "साहिल व ऐश्वर्या यांच्या मंगल परिणय सोहळ्याचे आपणास सस्नेह निमंत्रण.\n"+
-    "निमंत्रण पाहण्यासाठी (मराठी):\n"+mr+"\n\n"+
-    "Dear "+name+",\n"+
-    "You are cordially invited to the wedding of Sahil & Aishwarya.\n"+
-    "Open your invitation (English):\n"+en;
+    "You are cordially invited to the wedding of Sahil & Aishwarya.\n\n"+
+    "निमंत्रण पाहण्यासाठी / Open your invitation:\n"+link;
 }
 function mk(tag,cls,txt){var e=document.createElement(tag);if(cls)e.className=cls;if(txt)e.textContent=txt;return e}
 function copyBtn(label,link){
@@ -70,13 +68,12 @@ $('go').onclick=function(){
     var parts=line.split(','),name=parts[0].trim(),ph=(parts[1]||'').replace(/\D/g,'');
     if(!name)return;
     var q=BASE+'?to='+encodeURIComponent(name);
-    var en=q,mr=q+'&lang=mr';
     if(ph.length===10)ph='91'+ph;
     var row=mk('div','row'),btns=mk('div','btns');
     var w=mk('a','b wa','Send on WhatsApp');
-    w.href='https://wa.me/'+ph+'?text='+encodeURIComponent(message(name,mr,en));
+    w.href='https://wa.me/'+ph+'?text='+encodeURIComponent(message(name,q));
     w.target='_blank';w.rel='noopener';
-    btns.appendChild(w);btns.appendChild(copyBtn('Copy Marathi link',mr));btns.appendChild(copyBtn('Copy English link',en));
+    btns.appendChild(w);btns.appendChild(copyBtn('Copy link',q));
     row.appendChild(mk('b',null,name));row.appendChild(btns);out.appendChild(row);
   });
 };

@@ -205,7 +205,7 @@ html[lang=mr] .weather h2,html[lang=mr] .wall h2{font-size:1.9rem;font-weight:60
   <p data-mr="भवतु सब्ब मंगलम्" class="namo">NAMO BUDDHAY</p>
   <p class="mtitle" data-mr="मंगल परिणय"></p>
   <h1 data-mr="साहिल<small><svg width='44' height='44' style='color:var(--gold);vertical-align:middle' aria-hidden='true'><use href='#chakra'/></svg></small>ऐश्वर्या" class="cover-names">Sahil<small>weds</small>Aishwarya</h1>
-  <p data-mr="<b id=&quot;guest&quot;></b> यांच्यासाठी खास निमंत्रण" class="cover-for" id="forLine" hidden>A special invitation for <b id="guest"></b></p>
+  <p data-mr="<b id=&quot;guest&quot;></b> यांना स्नेहाचे निमंत्रण" class="cover-for" id="forLine" hidden>With love, an invitation for <b id="guest"></b></p>
   <button data-mr="निमंत्रण उघडा" class="btn pulse" id="openBtn">OPEN INVITATION</button>
 </div>
 
@@ -336,7 +336,7 @@ html[lang=mr] .weather h2,html[lang=mr] .wall h2{font-size:1.9rem;font-weight:60
     <h2 data-mr="निमंत्रक">With Warmest Wishes From</h2>
     <div data-mr="<p>आयु. मंगला रामटेके</p><p>आयु. इंदिरा रामटेके व आयु. विजय रामटेके</p><p>आयु. भारती रामटेके व आयु. निलेश रामटेके</p><p class='kids'>आर्य – अदिती – नव्या – अनन्या – आरुष</p><p class='fam' style='margin-top:.6rem'>समस्त रामटेके परिवार</p>"><p class="fam">The Ramteke Family</p>
       <p>Mrs. Mangala Ramteke</p>
-      <p>Mrs. Bharti Ramteke &amp; Mr. Nilesh Ramteke</p>
+      <p>Mrs. Bharti Ramteke &amp; Mrs. Nilesh Ramteke</p>
       <p class="kids">Arya &bull; Adviti &bull; Navya &bull; Ananya &bull; Aarush</p></div>
 
     <div class="rsvp">
@@ -403,11 +403,13 @@ html[lang=mr] .weather h2,html[lang=mr] .wall h2{font-size:1.9rem;font-weight:60
     if(f||row.length){row.push(f);r.push(row)}return r}
   var wl=document.getElementById('wList'),wm=document.getElementById('wMore'),wf=document.getElementById('wishForm'),
       ws=document.getElementById('wStatus'),wsoon=document.getElementById('wSoon'),wsend=document.getElementById('wSend'),
-      wishes=[],shown=12;
+      wishes=[],remote=[],mine=[],failed=false,shown=12;
+  try{mine=JSON.parse(localStorage.getItem('myWishes')||'[]')}catch(x){}
+  function rebuild(){wishes=mine.filter(function(a){return !remote.some(function(b){return b.n===a.n&&b.m===a.m})}).concat(remote)}
   function renderWishes(){
-    wl.textContent='';
+    rebuild();wl.textContent='';
     if(!wishes.length&&WALL.form){var e=document.createElement('p');e.className='wall-empty';
-      e.textContent=t('Be the first to leave a blessing.','आशीर्वाद देणारे पहिले व्हा.');wl.appendChild(e)}
+      e.textContent=failed?t('Wishes could not be loaded right now. Please refresh in a moment.','शुभेच्छा आत्ता लोड होऊ शकल्या नाहीत. कृपया थोड्या वेळाने पुन्हा प्रयत्न करा.'):t('Be the first to leave a blessing.','आशीर्वाद देणारे पहिले व्हा.');wl.appendChild(e)}
     wishes.slice(0,shown).forEach(function(w){
       var c=document.createElement('div');c.className='wish';
       var m=document.createElement('p');m.className='wm';m.textContent=w.m;
@@ -431,18 +433,19 @@ html[lang=mr] .weather h2,html[lang=mr] .wall h2{font-size:1.9rem;font-weight:60
     var body=new URLSearchParams();body.append(WALL.name,n);body.append(WALL.msg,m);
     wsend.disabled=true;
     function done(){
-      wishes.unshift({n:n,m:m});renderWishes();wf.reset();wsend.disabled=false;
+      mine.unshift({n:n,m:m});try{localStorage.setItem('myWishes',JSON.stringify(mine.slice(0,20)))}catch(x){}renderWishes();wf.reset();wsend.disabled=false;
       ws.textContent=t('Thank you! Your wishes mean a lot to us.','धन्यवाद! आपल्या शुभेच्छा आमच्यासाठी अमूल्य आहेत.');
       try{localStorage.setItem('wishT',String(Date.now()))}catch(x){}
     }
     fetch(WALL.form,{method:'POST',mode:'no-cors',body:body}).then(done,done);
   });
   if(WALL.csv){
-    fetch(WALL.csv).then(function(r){return r.text()}).then(function(x){
-      wishes=parseCSV(x).slice(1).filter(function(r){return r[1]&&r[2]})
-        .map(function(r){return{n:r[1].slice(0,40),m:r[2].slice(0,240)}}).reverse();
+    fetch(WALL.csv+(WALL.csv.indexOf('?')>-1?'&':'?')+'t='+Date.now(),{cache:'no-store'}).then(function(r){if(!r.ok)throw 0;return r.text()}).then(function(x){
+      var rows=parseCSV(x),h=(rows[0]||[]).map(function(c){return c.toLowerCase()}),ni=1,mi=2;
+      h.forEach(function(c,k){if(c.indexOf('name')>-1)ni=k;if(c.indexOf('message')>-1)mi=k});
+      remote=rows.slice(1).filter(function(r){return r[ni]&&r[mi]}).map(function(r){return{n:r[ni].slice(0,40),m:r[mi].slice(0,240)}}).reverse();
       renderWishes();
-    }).catch(function(){});
+    }).catch(function(){failed=true;renderWishes()});
   }
 
   // ================= Weather (Open-Meteo, free, no key) =================
