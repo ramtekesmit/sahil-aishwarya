@@ -6,12 +6,19 @@
 <title>Sahil weds Aishwarya | 24 November 2026</title>
 <meta name="description" content="You are cordially invited to the wedding of Sahil and Aishwarya. Tuesday, 24 November 2026, Chandrapur.">
 <meta name="theme-color" content="#14163a">
-<meta property="og:title" content="Sahil weds Aishwarya">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Sahil weds Aishwarya | Wedding Invitation">
+<meta property="og:url" content="https://YOUR-USERNAME.github.io/YOUR-REPO/">
+<meta property="og:image" content="https://YOUR-USERNAME.github.io/YOUR-REPO/preview.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://YOUR-USERNAME.github.io/YOUR-REPO/preview.jpg">
 <meta property="og:description" content="Wedding: 24 Nov 2026, Chandrapur. Reception: 25 Nov 2026, Nagpur.">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🪷</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Pinyon+Script&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Pinyon+Script&family=Noto+Serif+Devanagari:wght@400;600&display=swap" rel="stylesheet">
 <style>
 :root{--ink:#14163a;--ink2:#1d2050;--ivory:#f7f1e3;--gold:#c9a24a;--gold2:#e8cf8c;--saffron:#d9822b;--text:#2a2a3d;
 --script:'Pinyon Script','Snell Roundhand',cursive;--serif:'Cormorant Garamond',Georgia,'Times New Roman',serif}
@@ -117,6 +124,29 @@ border:1px solid var(--gold);background:rgba(20,22,58,.92);color:var(--gold2);cu
 #musicBtn.muted .off{display:block}
 #musicBtn:not(.muted){animation:pulse 3s ease-in-out infinite}
 
+/* ---------- Marathi mode ---------- */
+html[lang=mr]{--script:'Noto Serif Devanagari',serif;--serif:'Noto Serif Devanagari','Cormorant Garamond',serif}
+html[lang=mr] body{font-size:1.08rem;line-height:1.75}
+html[lang=mr] *{letter-spacing:normal!important}
+html[lang=mr] .name{font-size:clamp(2.3rem,10vw,3.8rem);font-weight:600}
+html[lang=mr] .cover-names{font-size:clamp(2.4rem,10vw,4rem);font-weight:600}
+html[lang=mr] .cover-names small{font-size:1.1rem}
+html[lang=mr] .event h3{font-size:2.1rem;font-weight:600}
+html[lang=mr] .count h2,html[lang=mr] .events h2,html[lang=mr] .wishes h2,html[lang=mr] .memory h2{font-size:1.9rem;font-weight:600}
+html[lang=mr] .btn{font-size:.95rem}
+#langBtn{position:fixed;top:max(14px,env(safe-area-inset-top,0px));right:max(14px,env(safe-area-inset-right,0px));z-index:70;height:40px;padding:0 1rem;border-radius:20px;
+border:1px solid var(--gold);background:rgba(20,22,58,.92);color:var(--gold2);font:inherit;font-size:1rem;cursor:pointer}
+
+.mtitle,.mtitle2,.role,.vl,.quote:empty{display:block}
+.mtitle:empty,.mtitle2:empty,.role:empty,.vl:empty{display:none}
+.mtitle{font-family:var(--script);font-size:2.4rem;color:var(--gold2);margin-top:1rem}
+.mtitle2{font-family:var(--script);font-size:3rem;color:var(--saffron);margin-bottom:.8rem}
+.role{color:var(--saffron);font-weight:600;margin:.6rem 0 0}
+.vl{font-style:italic;color:var(--saffron);margin-bottom:.2rem}
+.pre{font-family:var(--serif);font-size:.4em;font-weight:400;display:inline;margin-right:.4rem}
+.quote{font-style:italic;font-size:1.05rem;max-width:520px;margin:0 auto 1.4rem;padding-bottom:1.1rem;border-bottom:1px solid var(--gold)}
+.weds svg{width:44px;height:44px}
+
 /* ---------- Reveal ---------- */
 .rv{opacity:0;transform:translateY(26px);transition:opacity 1s,transform 1s cubic-bezier(.2,.7,.2,1)}
 .rv.in{opacity:1;transform:none}
@@ -139,14 +169,17 @@ border:1px solid var(--gold);background:rgba(20,22,58,.92);color:var(--gold2);cu
 <path d="M30 36 C14 38 4 34 1 26 C12 24 24 28 30 36Z"/><path d="M30 36 C46 38 56 34 59 26 C48 24 36 28 30 36Z"/></g></symbol>
 </defs></svg>
 
+<button id="langBtn" aria-label="Change language">मराठी</button>
+
 <!-- Cover -->
 <div id="cover" role="dialog" aria-label="Wedding invitation cover">
   <div class="frame"></div>
   <svg class="chakra" aria-hidden="true"><use href="#chakra"/></svg>
-  <p class="namo">NAMO BUDDHAY</p>
-  <h1 class="cover-names">Sahil<small>weds</small>Aishwarya</h1>
-  <p class="cover-for" id="forLine" hidden>A special invitation for <b id="guest"></b></p>
-  <button class="btn pulse" id="openBtn">OPEN INVITATION</button>
+  <p data-mr="भवतु सब्ब मंगलम्" class="namo">NAMO BUDDHAY</p>
+  <p class="mtitle" data-mr="मंगल परिणय"></p>
+  <h1 data-mr="साहिल<small><svg width='44' height='44' style='color:var(--gold);vertical-align:middle' aria-hidden='true'><use href='#chakra'/></svg></small>ऐश्वर्या" class="cover-names">Sahil<small>weds</small>Aishwarya</h1>
+  <p data-mr="<b id=&quot;guest&quot;></b> यांच्यासाठी खास निमंत्रण" class="cover-for" id="forLine" hidden>A special invitation for <b id="guest"></b></p>
+  <button data-mr="निमंत्रण उघडा" class="btn pulse" id="openBtn">OPEN INVITATION</button>
 </div>
 
 <div id="petals" aria-hidden="true"></div>
@@ -164,18 +197,21 @@ border:1px solid var(--gold);background:rgba(20,22,58,.92);color:var(--gold2);cu
   <div class="wrap">
     <div class="rv">
       <svg width="64" height="64" style="color:var(--gold);margin-bottom:.8rem" aria-hidden="true"><use href="#chakra"/></svg>
-      <p class="namo" style="color:var(--saffron);letter-spacing:.3em;font-size:1rem">NAMO BUDDHAY</p>
-      <p class="invite">With immense joy &amp; heartfelt gratitude,
+      <p data-mr="भवतु सब्ब मंगलम्" class="namo" style="color:var(--saffron);letter-spacing:.3em;font-size:1rem">NAMO BUDDHAY</p>
+      <p class="quote" data-mr="हजारो वेळा चंद्र उगवला पण प्रकाशाचा अर्थ कळला नव्हता. डॉ. बाबासाहेब आंबेडकर जन्मले नसते तर खऱ्या जीवनाचा अर्थ कळला नसता.">The moon rose a thousand times, yet the meaning of light was never understood. Had Dr. Babasaheb Ambedkar not been born, the meaning of true life would never have been known.</p>
+      <p data-mr="सप्रेम जयभीम<br>आमच्या येथे महाकारुणिक तथागत गौतम बुद्ध व महामानव डॉ. बाबासाहेब आंबेडकर यांच्या कृपेने" class="invite">With immense joy &amp; heartfelt gratitude,
         <strong>Mrs. Indira &amp; Mr. Vijay Ramteke</strong>
         cordially invite you along with your family, to celebrate the wedding of their beloved son</p>
     </div>
     <div class="divider rv"><svg viewBox="0 0 60 40"><use href="#lotus"/></svg></div>
     <div class="rv">
-      <h2 class="name">Sahil</h2>
-      <p class="parents">S/o Mrs. Indira &amp; Mr. Vijay Ramteke<br>Nagpur</p>
-      <p class="weds">WEDS</p>
-      <h2 class="name">Aishwarya</h2>
-      <p class="parents">D/o Mrs. Lata &amp; Mr. Anil Meshram<br>Tukum, Chandrapur</p>
+      <p class="mtitle2" data-mr="मंगल परिणय"></p><p class="role" data-mr="॥ उपासक ॥"></p>
+      <h2 class="name" data-mr="<small class='pre'>आयुष्यमान</small> साहिल">Sahil</h2>
+      <p class="parents" data-mr="आयु. इंदिरा व आयु. विजय रामटेके<br>यांचे ज्येष्ठ चिरंजीव<br>रा. नागपूर">S/o Mrs. Indira &amp; Mr. Vijay Ramteke<br>Nagpur</p>
+      <p data-mr="<svg width='44' height='44' style='color:var(--gold);vertical-align:middle' aria-hidden='true'><use href='#chakra'/></svg>" class="weds">WEDS</p>
+      <p class="role" data-mr="॥ उपासिका ॥"></p>
+      <h2 class="name" data-mr="<small class='pre'>आयुष्यमती</small> ऐश्वर्या">Aishwarya</h2>
+      <p class="parents" data-mr="आयु. लता व आयु. अनिल मेश्राम<br>यांची कन्या<br>रा. तुकूम, चंद्रपूर">D/o Mrs. Lata &amp; Mr. Anil Meshram<br>Tukum, Chandrapur</p>
     </div>
   </div>
   <a class="scroll" href="#count" aria-label="Scroll down">&#8964;</a>
@@ -184,47 +220,47 @@ border:1px solid var(--gold);background:rgba(20,22,58,.92);color:var(--gold2);cu
 <!-- Countdown -->
 <section class="count" id="count">
   <div class="wrap rv">
-    <h2>Counting down to our day</h2>
+    <h2 data-mr="आमच्या खास दिवसाची उलटगणना">Counting down to our day</h2>
     <div class="clock" role="timer" aria-live="off">
-      <div><b id="d">--</b><span>days</span></div>
-      <div><b id="h">--</b><span>hours</span></div>
-      <div><b id="m">--</b><span>minutes</span></div>
-      <div><b id="s">--</b><span>seconds</span></div>
+      <div><b id="d">--</b><span data-mr="दिवस">days</span></div>
+      <div><b id="h">--</b><span data-mr="तास">hours</span></div>
+      <div><b id="m">--</b><span data-mr="मिनिटे">minutes</span></div>
+      <div><b id="s">--</b><span data-mr="सेकंद">seconds</span></div>
     </div>
-    <p class="sub" id="cmsg">Tuesday, 24th November 2026 at 12:15 PM</p>
+    <p data-mr="मंगलवार दि. २४/११/२०२६ दुपारी १२:१५ वाजता" class="sub" id="cmsg">Tuesday, 24th November 2026 at 12:15 PM</p>
   </div>
 </section>
 
 <!-- Events -->
 <section class="events" id="events">
   <div class="wrap">
-    <h2 class="rv">Join us for the celebrations</h2>
+    <h2 data-mr="आमच्या आनंदात सहभागी व्हा" class="rv">Join us for the celebrations</h2>
 
     <article class="event rv">
-      <h3>Wedding Ceremony</h3>
-      <p class="when">Tuesday, 24th November 2026</p>
-      <p class="time">At 12:15 P.M. onwards</p>
+      <h3 data-mr="मंगल परिणय">Wedding Ceremony</h3>
+      <p data-mr="मंगलवार दि. २४/११/२०२६" class="when">Tuesday, 24th November 2026</p>
+      <p data-mr="दुपारी १२:१५ वाजता" class="time">At 12:15 P.M. onwards</p>
       <div class="venue">
-        <b>YASHOGANGA CELEBRATION HALL</b>
-        <address>Samadhan Purti Bazaar, Chandrapur-Durgapur Road,<br>Near Law College, Nirman Nagar,<br>Tukum, Chandrapur</address>
+        <span class="vl" data-mr="॥ परिणय स्थळ ॥"></span><b data-mr="“ यशोगंगा लॉन ”">YASHOGANGA CELEBRATION HALL</b>
+        <address data-mr="समाधान पूर्ती बाजार, चंद्रपूर–दुर्गापूर रोड,<br>लॉ कॉलेज जवळ, निर्माण नगर,<br>तुकूम, चंद्रपूर.">Samadhan Purti Bazaar, Chandrapur-Durgapur Road,<br>Near Law College, Nirman Nagar,<br>Tukum, Chandrapur</address>
       </div>
       <div class="row">
-        <a class="btn dark" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Yashoganga+Celebration+Hall+Samadhan+Purti+Bazaar+Nirman+Nagar+Tukum+Chandrapur">VIEW MAP</a>
-        <a class="btn dark" target="_blank" rel="noopener" href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Sahil+weds+Aishwarya+-+Wedding+Ceremony&dates=20261124T064500Z/20261124T103000Z&location=Yashoganga+Celebration+Hall,+Nirman+Nagar,+Tukum,+Chandrapur&details=Wedding+of+Sahil+and+Aishwarya">ADD TO CALENDAR</a>
+        <a class="btn dark" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Yashoganga+Celebration+Hall+Samadhan+Purti+Bazaar+Nirman+Nagar+Tukum+Chandrapur" data-mr="नकाशा पहा">VIEW MAP</a>
+        <a class="btn dark" target="_blank" rel="noopener" href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Sahil+weds+Aishwarya+-+Wedding+Ceremony&dates=20261124T064500Z/20261124T103000Z&location=Yashoganga+Celebration+Hall,+Nirman+Nagar,+Tukum,+Chandrapur&details=Wedding+of+Sahil+and+Aishwarya" data-mr="कॅलेंडरमध्ये जोडा">ADD TO CALENDAR</a>
       </div>
     </article>
 
     <article class="event rv">
-      <h3>Reception Ceremony</h3>
-      <p class="when">Wednesday, 25th November 2026</p>
-      <p class="time">At 07:00 P.M. onwards</p>
+      <h3 data-mr="स्वागत समारंभ व स्वरुची भोज">Reception Ceremony</h3>
+      <p data-mr="बुधवार, दि. २५/११/२०२६ ला" class="when">Wednesday, 25th November 2026</p>
+      <p data-mr="सायंकाळी ७:०० वाजता" class="time">At 07:00 P.M. onwards</p>
       <div class="venue">
-        <b>GANESH LAWN</b>
-        <address>A-130, Pannase Layout,<br>Last Bus Stop, Nagpur - 440022</address>
+        <span class="vl" data-mr="॥ स्थळ ॥"></span><b data-mr="“ गणेश लॉन ”">GANESH LAWN</b>
+        <address data-mr="A-130, पन्नासे ले-आऊट,<br>लास्ट बस स्टॉप, नागपूर – 440022">A-130, Pannase Layout,<br>Last Bus Stop, Nagpur - 440022</address>
       </div>
       <div class="row">
-        <a class="btn dark" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Ganesh+Lawn+Pannase+Layout+Last+Bus+Stop+Nagpur+440022">VIEW MAP</a>
-        <a class="btn dark" target="_blank" rel="noopener" href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Sahil+weds+Aishwarya+-+Reception&dates=20261125T133000Z/20261125T170000Z&location=Ganesh+Lawn,+Pannase+Layout,+Nagpur+440022&details=Reception+of+Sahil+and+Aishwarya">ADD TO CALENDAR</a>
+        <a class="btn dark" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Ganesh+Lawn+Pannase+Layout+Last+Bus+Stop+Nagpur+440022" data-mr="नकाशा पहा">VIEW MAP</a>
+        <a class="btn dark" target="_blank" rel="noopener" href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Sahil+weds+Aishwarya+-+Reception&dates=20261125T133000Z/20261125T170000Z&location=Ganesh+Lawn,+Pannase+Layout,+Nagpur+440022&details=Reception+of+Sahil+and+Aishwarya" data-mr="कॅलेंडरमध्ये जोडा">ADD TO CALENDAR</a>
       </div>
     </article>
   </div>
@@ -234,35 +270,35 @@ border:1px solid var(--gold);background:rgba(20,22,58,.92);color:var(--gold2);cu
 <section class="memory">
   <div class="wrap rv">
     <svg class="lotus" viewBox="0 0 60 40" aria-hidden="true"><use href="#lotus"/></svg>
-    <h2>In Loving Memory</h2>
-    <p class="q">Forever in our hearts, always a part of our journey.</p>
-    <p class="names">Tikaramji Ramteke &nbsp;&bull;&nbsp; Tarabai Ramteke &nbsp;&bull;&nbsp; Mahesh Ramteke</p>
+    <h2 data-mr="स्मृतींना विनम्र अभिवादन">In Loving Memory</h2>
+    <p data-mr="सदैव आमच्या हृदयात, आमच्या प्रवासाचा कायमचा भाग." class="q">Forever in our hearts, always a part of our journey.</p>
+    <p data-mr="टिकारामजी रामटेके &nbsp;&bull;&nbsp; ताराबाई रामटेके &nbsp;&bull;&nbsp; महेश रामटेके" class="names">Tikaramji Ramteke &nbsp;&bull;&nbsp; Tarabai Ramteke &nbsp;&bull;&nbsp; Mahesh Ramteke</p>
   </div>
 </section>
 
 <!-- Wishes + RSVP -->
 <section class="wishes">
   <div class="wrap rv">
-    <h2>With Warmest Wishes From</h2>
-    <p class="fam">The Ramteke Family</p>
-    <p>Mrs. Mangala Ramteke</p>
-    <p>Mrs. Bharti Ramteke &amp; Mr. Nilesh Ramteke</p>
-    <p class="kids">Arya &bull; Adviti &bull; Navya &bull; Ananya &bull; Aarush</p>
+    <h2 data-mr="निमंत्रक">With Warmest Wishes From</h2>
+    <div data-mr="<p>आयु. मंगला रामटेके</p><p>आयु. इंदिरा रामटेके व आयु. विजय रामटेके</p><p>आयु. भारती रामटेके व आयु. निलेश रामटेके</p><p class='kids'>आर्य – अदिती – नव्या – अनन्या – आरुष</p><p class='fam' style='margin-top:.6rem'>समस्त रामटेके परिवार</p>"><p class="fam">The Ramteke Family</p>
+      <p>Mrs. Mangala Ramteke</p>
+      <p>Mrs. Bharti Ramteke &amp; Mrs. Nilesh Ramteke</p>
+      <p class="kids">Arya &bull; Adviti &bull; Navya &bull; Ananya &bull; Aarush</p></div>
 
     <div class="rsvp">
-      <p>Your presence will make our day complete.</p>
-      <p class="from" style="margin-top:.8rem">Smit Nilesh Ramteke &amp; Tanmay Vijay Ramteke</p>
-      <p>71/A, Wahane Layout, Swalambi Nagar, Nagpur</p>
+      <p data-mr="आपल्या उपस्थितीने आमचा आनंद द्विगुणित होईल.">Your presence will make our day complete.</p>
+      <p data-mr="प्रेषक :- स्मित निलेश रामटेके व तन्मय विजय रामटेके" class="from" style="margin-top:.8rem">Smit Nilesh Ramteke &amp; Tanmay Vijay Ramteke</p>
+      <p data-mr="71/A, वाहणे ले-आऊट, स्वावलंबी नगर, नागपूर.">71/A, Wahane Layout, Swalambi Nagar, Nagpur</p>
       <div class="row" style="display:flex;gap:.7rem;justify-content:center;flex-wrap:wrap">
-        <a class="btn dark" id="wa" target="_blank" rel="noopener" href="https://wa.me/919673762011?text=Namo%20Buddhay!%20We%20will%20attend%20the%20wedding.">CONFIRM ON WHATSAPP</a>
-        <a class="btn dark" href="tel:+919673762011">CALL 96737 62011</a>
+        <a class="btn dark" id="wa" target="_blank" rel="noopener" href="https://wa.me/919673762011?text=Namo%20Buddhay!%20We%20will%20attend%20the%20wedding." data-mr="व्हॉट्सॲपवर कळवा">CONFIRM ON WHATSAPP</a>
+        <a class="btn dark" href="tel:+919673762011" data-mr="फोन करा ९६७३७ ६२०११">CALL 96737 62011</a>
       </div>
     </div>
   </div>
 </section>
 </main>
 
-<footer>Sahil &amp; Aishwarya &bull; 24 &amp; 25 November 2026</footer>
+<footer data-mr="साहिल &amp; ऐश्वर्या &bull; २४ व २५ नोव्हेंबर २०२६">Sahil &amp; Aishwarya &bull; 24 &amp; 25 November 2026</footer>
 
 <script>
 (function(){
@@ -274,6 +310,23 @@ border:1px solid var(--gold);background:rgba(20,22,58,.92);color:var(--gold2);cu
     var wa=document.getElementById('wa');
     wa.href='https://wa.me/919673762011?text='+encodeURIComponent('Namo Buddhay! This is '+to.slice(0,60)+'. We will attend the wedding.');
   }
+
+  // ---------- Language ----------
+  var lang='en';
+  function applyLang(l){
+    lang=l;document.documentElement.lang=l;
+    document.querySelectorAll('[data-mr]').forEach(function(el){
+      if(el.dataset.en===undefined)el.dataset.en=el.innerHTML;
+      el.innerHTML=l==='mr'?el.dataset.mr:el.dataset.en;
+    });
+    var g=document.getElementById('guest');if(g&&to)g.textContent=to.slice(0,60);
+    document.getElementById('langBtn').textContent=l==='mr'?'English':'मराठी';
+    try{localStorage.setItem('lang',l)}catch(e){}
+  }
+  document.getElementById('langBtn').addEventListener('click',function(){applyLang(lang==='en'?'mr':'en')});
+  var q=new URLSearchParams(location.search).get('lang'),saved=null;
+  try{saved=localStorage.getItem('lang')}catch(e){}
+  var first=q||saved;if(first==='mr')applyLang('mr');
 
   // Petals
   var box=document.getElementById('petals'),cols=['#e8a33d','#d9822b','#f3c969','#e7bfd0','#fff1c9'];
