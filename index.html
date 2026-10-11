@@ -107,6 +107,16 @@ background-image:radial-gradient(circle at 50% 0,rgba(201,162,74,.18),transparen
 .rsvp .from{font-weight:600;color:var(--ink)}
 footer{background:var(--ink);color:var(--gold2);text-align:center;padding:2rem 1rem calc(2rem + env(safe-area-inset-bottom,0px));font-style:italic;font-size:1rem}
 
+/* ---------- Music button ---------- */
+#musicBtn{position:fixed;right:max(14px,env(safe-area-inset-right,0px));bottom:max(14px,env(safe-area-inset-bottom,0px));z-index:60;width:48px;height:48px;border-radius:50%;
+border:1px solid var(--gold);background:rgba(20,22,58,.92);color:var(--gold2);cursor:pointer;display:none;align-items:center;justify-content:center}
+#musicBtn.show{display:flex}
+#musicBtn svg{width:22px;height:22px}
+#musicBtn .off{display:none}
+#musicBtn.muted .on{display:none}
+#musicBtn.muted .off{display:block}
+#musicBtn:not(.muted){animation:pulse 3s ease-in-out infinite}
+
 /* ---------- Reveal ---------- */
 .rv{opacity:0;transform:translateY(26px);transition:opacity 1s,transform 1s cubic-bezier(.2,.7,.2,1)}
 .rv.in{opacity:1;transform:none}
@@ -140,6 +150,13 @@ footer{background:var(--ink);color:var(--gold2);text-align:center;padding:2rem 1
 </div>
 
 <div id="petals" aria-hidden="true"></div>
+
+<!-- Background music: put your file next to index.html and name it music.mp3 -->
+<audio id="bgm" src="music.mp3" loop preload="auto"></audio>
+<button id="musicBtn" aria-label="Mute or unmute music" title="Music on/off">
+  <svg class="on" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l11-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="17" cy="16" r="3"/></svg>
+  <svg class="off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l11-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="17" cy="16" r="3"/><path d="M2 2l20 20"/></svg>
+</button>
 
 <main>
 <!-- Hero -->
@@ -270,9 +287,26 @@ footer{background:var(--ink);color:var(--gold2);text-align:center;padding:2rem 1
   }
   function shower(n,gap){for(var i=0;i<n;i++)setTimeout(petal,i*gap)}
 
+  // Music: starts on the Open button tap (browsers block autoplay without a tap)
+  var bgm=document.getElementById('bgm'),mb=document.getElementById('musicBtn');
+  bgm.volume=.5;
+  function setMuted(m){mb.classList.toggle('muted',m)}
+  mb.addEventListener('click',function(){
+    if(bgm.paused){bgm.play();setMuted(false)}else{bgm.pause();setMuted(true)}
+  });
+  document.addEventListener('visibilitychange',function(){
+    if(document.hidden&&!bgm.paused){bgm.pause();bgm.dataset.auto='1'}
+    else if(!document.hidden&&bgm.dataset.auto){bgm.dataset.auto='';bgm.play()}
+  });
+  function startMusic(){
+    var p=bgm.play();
+    if(p&&p.then){p.then(function(){mb.classList.add('show');setMuted(false)}).catch(function(){})}
+  }
+
   // Open cover
   var cover=document.getElementById('cover');
   document.getElementById('openBtn').addEventListener('click',function(){
+    startMusic();
     cover.classList.add('open');document.body.classList.remove('locked');
     if(!reduce){shower(70,60);var t=setInterval(petal,1100);setTimeout(function(){clearInterval(t)},40000)}
     setTimeout(function(){cover.style.display='none';reveal()},1450);
