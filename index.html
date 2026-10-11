@@ -8,12 +8,12 @@
 <meta name="theme-color" content="#14163a">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Sahil weds Aishwarya | Wedding Invitation">
-<meta property="og:url" content="https://ramtekesmit.github.io/sahil-aishwarya/">
-<meta property="og:image" content="https://ramtekesmit.github.io/sahil-aishwarya/preview.jpg">
+<meta property="og:url" content="https://YOUR-USERNAME.github.io/YOUR-REPO/">
+<meta property="og:image" content="https://YOUR-USERNAME.github.io/YOUR-REPO/preview.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://ramtekesmit.github.io/sahil-aishwarya/preview.jpg">
+<meta name="twitter:image" content="https://YOUR-USERNAME.github.io/YOUR-REPO/preview.jpg">
 <meta property="og:description" content="Wedding: 24 Nov 2026, Chandrapur. Reception: 25 Nov 2026, Nagpur.">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🪷</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -137,8 +137,8 @@ html[lang=mr] .btn{font-size:.95rem}
 #langBtn{position:fixed;top:max(14px,env(safe-area-inset-top,0px));right:max(14px,env(safe-area-inset-right,0px));z-index:70;height:40px;padding:0 1rem;border-radius:20px;
 border:1px solid var(--gold);background:rgba(20,22,58,.92);color:var(--gold2);font:inherit;font-size:1rem;cursor:pointer}
 
-.mtitle,.mtitle2,.role,.vl,.quote:empty{display:block}
-.mtitle:empty,.mtitle2:empty,.role:empty,.vl:empty{display:none}
+.mtitle,.mtitle2,.role,.vl,.quote{display:block}
+.mtitle:empty,.mtitle2:empty,.role:empty,.vl:empty,.quote:empty{display:none}
 .mtitle{font-family:var(--script);font-size:2.4rem;color:var(--gold2);margin-top:1rem}
 .mtitle2{font-family:var(--script);font-size:3rem;color:var(--saffron);margin-bottom:.8rem}
 .role{color:var(--saffron);font-weight:600;margin:.6rem 0 0}
@@ -146,6 +146,33 @@ border:1px solid var(--gold);background:rgba(20,22,58,.92);color:var(--gold2);fo
 .pre{font-family:var(--serif);font-size:.4em;font-weight:400;display:inline;margin-right:.4rem}
 .quote{font-style:italic;font-size:1.05rem;max-width:520px;margin:0 auto 1.4rem;padding-bottom:1.1rem;border-bottom:1px solid var(--gold)}
 .weds svg{width:44px;height:44px}
+
+/* ---------- Weather + Wishes wall ---------- */
+.weather,.wall{background:#fffaf0}
+.weather h2,.wall h2{font-family:var(--script);font-weight:400;font-size:2.6rem;color:var(--ink);margin-bottom:1.2rem}
+html[lang=mr] .weather h2,html[lang=mr] .wall h2{font-size:1.9rem;font-weight:600}
+.wx-grid{display:grid;grid-template-columns:1fr;gap:1rem;max-width:560px;margin:auto}
+@media(min-width:640px){.wx-grid{grid-template-columns:1fr 1fr;max-width:760px}}
+.wx{border:1px solid var(--gold);background:#fff;padding:1.4rem 1rem;position:relative}
+.wx::before{content:"";position:absolute;inset:5px;border:1px solid rgba(201,162,74,.4);pointer-events:none}
+.wx .loc{font-weight:600;color:var(--ink)}
+.wx .dt{font-style:italic;font-size:1rem;color:var(--saffron)}
+.wx .ic{font-size:2.8rem;line-height:1.3}
+.wx .tp{font-size:1.5rem;font-weight:600;color:var(--ink)}
+.wx .sm{font-size:1rem}
+.wx-note{margin-top:1.1rem;font-style:italic;font-size:.98rem;max-width:520px;margin-left:auto;margin-right:auto}
+.wall-sub{font-style:italic;margin-bottom:1.4rem}
+#wishForm{max-width:520px;margin:0 auto 1.6rem;display:grid;gap:.7rem;text-align:left}
+#wishForm input,#wishForm textarea{width:100%;font:inherit;font-size:1.05rem;padding:.7rem .8rem;border:1px solid var(--gold);background:#fff;color:var(--text);border-radius:0}
+#wishForm textarea{resize:vertical;min-height:90px}
+#wishForm .btn{margin:.2rem auto 0}
+#wishForm .btn:disabled{opacity:.5;cursor:default}
+#wStatus{min-height:1.5rem;font-style:italic;color:var(--saffron);margin-bottom:.6rem}
+.wish-list{display:grid;gap:.8rem;max-width:560px;margin:auto;text-align:left}
+.wish{background:#fff;border:1px solid rgba(201,162,74,.6);border-left:4px solid var(--gold);padding:.9rem 1.1rem}
+.wish .wm{font-style:italic;word-wrap:break-word;overflow-wrap:anywhere}
+.wish .wn{font-weight:600;color:var(--ink);margin-top:.3rem;font-size:1.05rem}
+.wall-empty{text-align:center;font-style:italic}
 
 /* ---------- Reveal ---------- */
 .rv{opacity:0;transform:translateY(26px);transition:opacity 1s,transform 1s cubic-bezier(.2,.7,.2,1)}
@@ -198,7 +225,7 @@ border:1px solid var(--gold);background:rgba(20,22,58,.92);color:var(--gold2);fo
     <div class="rv">
       <svg width="64" height="64" style="color:var(--gold);margin-bottom:.8rem" aria-hidden="true"><use href="#chakra"/></svg>
       <p data-mr="भवतु सब्ब मंगलम्" class="namo" style="color:var(--saffron);letter-spacing:.3em;font-size:1rem">NAMO BUDDHAY</p>
-      <p class="quote" data-mr="हजारो वेळा चंद्र उगवला पण प्रकाशाचा अर्थ कळला नव्हता. डॉ. बाबासाहेब आंबेडकर जन्मले नसते तर खऱ्या जीवनाचा अर्थ कळला नसता.">The moon rose a thousand times, yet the meaning of light was never understood. Had Dr. Babasaheb Ambedkar not been born, the meaning of true life would never have been known.</p>
+      <p class="quote" data-mr="हजारो वेळा चंद्र उगवला पण प्रकाशाचा अर्थ कळला नव्हता. डॉ. बाबासाहेब आंबेडकर जन्मले नसते तर खऱ्या जीवनाचा अर्थ कळला नसता."></p>
       <p data-mr="सप्रेम जयभीम<br>आमच्या येथे महाकारुणिक तथागत गौतम बुद्ध व महामानव डॉ. बाबासाहेब आंबेडकर यांच्या कृपेने" class="invite">With immense joy &amp; heartfelt gratitude,
         <strong>Mrs. Indira &amp; Mr. Vijay Ramteke</strong>
         cordially invite you along with your family, to celebrate the wedding of their beloved son</p>
@@ -266,6 +293,15 @@ border:1px solid var(--gold);background:rgba(20,22,58,.92);color:var(--gold2);fo
   </div>
 </section>
 
+<!-- Weather -->
+<section class="weather" id="weather" hidden>
+  <div class="wrap rv">
+    <h2 data-mr="आमच्या दिवसांचे हवामान">Weather on Our Days</h2>
+    <div class="wx-grid" id="wxGrid"></div>
+    <p class="wx-note" id="wxNote"></p>
+  </div>
+</section>
+
 <!-- In loving memory -->
 <section class="memory">
   <div class="wrap rv">
@@ -276,13 +312,31 @@ border:1px solid var(--gold);background:rgba(20,22,58,.92);color:var(--gold2);fo
   </div>
 </section>
 
+<!-- Wishes wall -->
+<section class="wall" id="wall">
+  <div class="wrap rv">
+    <h2 data-mr="शुभेच्छा भिंत">Wishes Wall</h2>
+    <p class="wall-sub" data-mr="साहिल व ऐश्वर्या यांना आपले आशीर्वाद व शुभेच्छा द्या">Leave your blessings and wishes for Sahil &amp; Aishwarya</p>
+    <p class="wall-empty" id="wSoon" hidden data-mr="शुभेच्छा भिंत लवकरच सुरू होईल.">The wishes wall will open soon.</p>
+    <form id="wishForm">
+      <input id="wName" maxlength="40" required autocomplete="name" aria-label="Your name">
+      <textarea id="wMsg" maxlength="240" required aria-label="Your wishes"></textarea>
+      <input id="wHp" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px">
+      <button class="btn dark" id="wSend" type="submit" data-mr="शुभेच्छा पाठवा">SEND WISHES</button>
+    </form>
+    <p id="wStatus" role="status"></p>
+    <div class="wish-list" id="wList"></div>
+    <button class="btn dark" id="wMore" hidden data-mr="आणखी पहा">SHOW MORE</button>
+  </div>
+</section>
+
 <!-- Wishes + RSVP -->
 <section class="wishes">
   <div class="wrap rv">
     <h2 data-mr="निमंत्रक">With Warmest Wishes From</h2>
     <div data-mr="<p>आयु. मंगला रामटेके</p><p>आयु. इंदिरा रामटेके व आयु. विजय रामटेके</p><p>आयु. भारती रामटेके व आयु. निलेश रामटेके</p><p class='kids'>आर्य – अदिती – नव्या – अनन्या – आरुष</p><p class='fam' style='margin-top:.6rem'>समस्त रामटेके परिवार</p>"><p class="fam">The Ramteke Family</p>
       <p>Mrs. Mangala Ramteke</p>
-      <p>Mrs. Bharti Ramteke &amp; Mr. Nilesh Ramteke</p>
+      <p>Mrs. Bharti Ramteke &amp; Mrs. Nilesh Ramteke</p>
       <p class="kids">Arya &bull; Adviti &bull; Navya &bull; Ananya &bull; Aarush</p></div>
 
     <div class="rsvp">
@@ -312,6 +366,7 @@ border:1px solid var(--gold);background:rgba(20,22,58,.92);color:var(--gold2);fo
   }
 
   // ---------- Language ----------
+  var onLang=[];
   var lang='en';
   function applyLang(l){
     lang=l;document.documentElement.lang=l;
@@ -322,11 +377,130 @@ border:1px solid var(--gold);background:rgba(20,22,58,.92);color:var(--gold2);fo
     var g=document.getElementById('guest');if(g&&to)g.textContent=to.slice(0,60);
     document.getElementById('langBtn').textContent=l==='mr'?'English':'मराठी';
     try{localStorage.setItem('lang',l)}catch(e){}
+    onLang.forEach(function(f){f()});
   }
   document.getElementById('langBtn').addEventListener('click',function(){applyLang(lang==='en'?'mr':'en')});
   var q=new URLSearchParams(location.search).get('lang'),saved=null;
   try{saved=localStorage.getItem('lang')}catch(e){}
   var first=q||saved;if(first==='mr')applyLang('mr');
+
+  // ================= Wishes wall (Google Form + Google Sheet) =================
+  // Fill these 4 values after following the setup steps. Leave empty to show "opening soon".
+  var WALL={
+    form:'https://docs.google.com/forms/d/e/1FAIpQLSeaIs_JHNbrsG-p_RHJ5izQ5jCLRu6HmpodYv4lNaLcXOF2Pg/formResponse',   // e.g. https://docs.google.com/forms/d/e/XXXX/formResponse
+    name:'entry.1790417394',   // e.g. entry.1234567890   (the Name question)
+    msg:'entry.2143648754',    // e.g. entry.9876543210   (the Message question)
+    csv:'https://docs.google.com/spreadsheets/d/e/2PACX-1vQyw045q5VQUV3Op_uvhqnMwB_qaZrsZLis0KR0G3NGsFtEEc58w5yT3ciD3XWhRAt76mFtAQ36YQL0/pub?gid=1106882378&single=true&output=csv'     // e.g. https://docs.google.com/spreadsheets/d/e/XXXX/pub?output=csv
+  };
+  function t(en,mr){return lang==='mr'?mr:en}
+  function parseCSV(x){var r=[],row=[],f='',q=false;
+    for(var i=0;i<x.length;i++){var c=x[i];
+      if(q){if(c==='"'){if(x[i+1]==='"'){f+='"';i++}else q=false}else f+=c}
+      else if(c==='"')q=true;
+      else if(c===','){row.push(f);f=''}
+      else if(c==='\n'||c==='\r'){if(c==='\r'&&x[i+1]==='\n')i++;row.push(f);r.push(row);row=[];f=''}
+      else f+=c}
+    if(f||row.length){row.push(f);r.push(row)}return r}
+  var wl=document.getElementById('wList'),wm=document.getElementById('wMore'),wf=document.getElementById('wishForm'),
+      ws=document.getElementById('wStatus'),wsoon=document.getElementById('wSoon'),wsend=document.getElementById('wSend'),
+      wishes=[],shown=12;
+  function renderWishes(){
+    wl.textContent='';
+    if(!wishes.length&&WALL.form){var e=document.createElement('p');e.className='wall-empty';
+      e.textContent=t('Be the first to leave a blessing.','आशीर्वाद देणारे पहिले व्हा.');wl.appendChild(e)}
+    wishes.slice(0,shown).forEach(function(w){
+      var c=document.createElement('div');c.className='wish';
+      var m=document.createElement('p');m.className='wm';m.textContent=w.m;
+      var n=document.createElement('p');n.className='wn';n.textContent='\u2014 '+w.n;
+      c.appendChild(m);c.appendChild(n);wl.appendChild(c)});
+    wm.hidden=wishes.length<=shown;
+  }
+  function setPh(){
+    document.getElementById('wName').placeholder=t('Your name','आपले नाव');
+    document.getElementById('wMsg').placeholder=t('Your wishes for the couple','नवदाम्पत्यासाठी आपल्या शुभेच्छा');
+  }
+  wm.addEventListener('click',function(){shown+=12;renderWishes()});
+  if(!WALL.form){wf.hidden=true;wsoon.hidden=false}
+  wf.addEventListener('submit',function(e){
+    e.preventDefault();
+    if(document.getElementById('wHp').value||!WALL.form)return;
+    var n=document.getElementById('wName').value.trim().slice(0,40),m=document.getElementById('wMsg').value.trim().slice(0,240);
+    if(!n||!m)return;
+    var last=0;try{last=+localStorage.getItem('wishT')||0}catch(x){}
+    if(Date.now()-last<30000){ws.textContent=t('Please wait a moment before sending another wish.','दुसरी शुभेच्छा पाठवण्यापूर्वी कृपया थोडे थांबा.');return}
+    var body=new URLSearchParams();body.append(WALL.name,n);body.append(WALL.msg,m);
+    wsend.disabled=true;
+    function done(){
+      wishes.unshift({n:n,m:m});renderWishes();wf.reset();wsend.disabled=false;
+      ws.textContent=t('Thank you! Your wishes mean a lot to us.','धन्यवाद! आपल्या शुभेच्छा आमच्यासाठी अमूल्य आहेत.');
+      try{localStorage.setItem('wishT',String(Date.now()))}catch(x){}
+    }
+    fetch(WALL.form,{method:'POST',mode:'no-cors',body:body}).then(done,done);
+  });
+  if(WALL.csv){
+    fetch(WALL.csv).then(function(r){return r.text()}).then(function(x){
+      wishes=parseCSV(x).slice(1).filter(function(r){return r[1]&&r[2]})
+        .map(function(r){return{n:r[1].slice(0,40),m:r[2].slice(0,240)}}).reverse();
+      renderWishes();
+    }).catch(function(){});
+  }
+
+  // ================= Weather (Open-Meteo, free, no key) =================
+  var VEN=[
+    {en:'Wedding \u00b7 Chandrapur',mr:'मंगल परिणय \u00b7 चंद्रपूर',lat:19.95,lon:79.30,d:'2026-11-24',de:'Tuesday, 24 Nov',dm:'मंगलवार, 24 नोव्हेंबर'},
+    {en:'Reception \u00b7 Nagpur',mr:'स्वागत समारंभ \u00b7 नागपूर',lat:21.1458,lon:79.0882,d:'2026-11-25',de:'Wednesday, 25 Nov',dm:'बुधवार, 25 नोव्हेंबर'}
+  ];
+  var wx=[null,null];
+  function wcode(c){
+    return c===0?['\u2600\ufe0f','Clear sky','निरभ्र आकाश']:c<=2?['\ud83c\udf24\ufe0f','Partly cloudy','अंशतः ढगाळ']:c===3?['\u2601\ufe0f','Cloudy','ढगाळ']:
+      c<=48?['\ud83c\udf2b\ufe0f','Foggy','धुके']:c<=67?['\ud83c\udf27\ufe0f','Rain','पाऊस']:c<=82?['\ud83c\udf26\ufe0f','Showers','पावसाच्या सरी']:['\u26c8\ufe0f','Thunderstorm','वादळी पाऊस'];
+  }
+  function loadWx(i){
+    var v=VEN[i],diff=(Date.parse(v.d+'T00:00:00+05:30')-Date.now())/864e5,base='&latitude='+v.lat+'&longitude='+v.lon+'&timezone=Asia%2FKolkata';
+    if(diff<=15){
+      return fetch('https://api.open-meteo.com/v1/forecast?daily=weather_code,temperature_2m_max,temperature_2m_min,precipitation_probability_max&start_date='+v.d+'&end_date='+v.d+base)
+        .then(function(r){return r.json()}).then(function(j){var d=j.daily;
+          wx[i]={f:1,c:d.weather_code[0],hi:Math.round(d.temperature_2m_max[0]),lo:Math.round(d.temperature_2m_min[0]),p:d.precipitation_probability_max[0]}});
+    }
+    return fetch('https://archive-api.open-meteo.com/v1/archive?daily=temperature_2m_max,temperature_2m_min,precipitation_sum&start_date=2021-11-20&end_date=2025-11-30'+base)
+      .then(function(r){return r.json()}).then(function(j){
+        var cd=+v.d.slice(8),n=0,hi=0,lo=0,rain=0;
+        j.daily.time.forEach(function(x,k){
+          var dd=+x.slice(8);if(x.slice(5,7)!=='11'||Math.abs(dd-cd)>2)return;
+          var a=j.daily.temperature_2m_max[k],b=j.daily.temperature_2m_min[k],c=j.daily.precipitation_sum[k];
+          if(a==null||b==null)return;n++;hi+=a;lo+=b;if(c>=1)rain++;
+        });
+        if(n)wx[i]={f:0,hi:Math.round(hi/n),lo:Math.round(lo/n),rp:Math.round(rain/n*100)};
+      });
+  }
+  function el(tag,cls,txt){var e=document.createElement(tag);if(cls)e.className=cls;if(txt!=null)e.textContent=txt;return e}
+  function renderWx(){
+    var g=document.getElementById('wxGrid'),any=false,live=false;g.textContent='';
+    VEN.forEach(function(v,i){
+      var d=wx[i];if(!d)return;any=true;
+      var card=el('div','wx'),ic,lb;
+      if(d.f){live=true;var w=wcode(d.c);ic=w[0];lb=t(w[1],w[2])}
+      else if(d.rp<15){ic='\u2600\ufe0f';lb=t('Mostly dry','काहीसे कोरडे')}
+      else if(d.rp<35){ic='\ud83c\udf24\ufe0f';lb=t('Mostly fair','बहुतांश स्वच्छ')}
+      else{ic='\ud83c\udf26\ufe0f';lb=t('Showers possible','पावसाची शक्यता')}
+      card.appendChild(el('p','loc',t(v.en,v.mr)));
+      card.appendChild(el('p','dt',t(v.de,v.dm)));
+      card.appendChild(el('p','ic',ic));
+      card.appendChild(el('p','sm',lb));
+      card.appendChild(el('p','tp',t('High ','कमाल ')+d.hi+'\u00b0  \u00b7  '+t('Low ','किमान ')+d.lo+'\u00b0'));
+      card.appendChild(el('p','sm',d.f?t('Chance of rain ','पावसाची शक्यता ')+d.p+'%':
+        t('Rain on about '+d.rp+'% of days around this date','या तारखेच्या आसपास सुमारे '+d.rp+'% दिवशी पाऊस')));
+      g.appendChild(card);
+    });
+    document.getElementById('weather').hidden=!any;
+    document.getElementById('wxNote').textContent=live?t('Live forecast','प्रत्यक्ष अंदाज'):
+      t('Showing typical weather from the past 5 years. The live forecast appears about two weeks before the wedding.','मागील ५ वर्षांतील सामान्य हवामान दाखवले आहे. लग्नाच्या सुमारे दोन आठवडे आधी प्रत्यक्ष अंदाज दिसेल.');
+  }
+  onLang.push(function(){setPh();renderWishes();renderWx()});
+  setPh();renderWishes();
+  if(Date.parse('2026-11-26T00:00:00+05:30')>Date.now()){
+    Promise.all([0,1].map(function(i){return loadWx(i).catch(function(){})})).then(renderWx);
+  }
 
   // Petals
   var box=document.getElementById('petals'),cols=['#e8a33d','#d9822b','#f3c969','#e7bfd0','#fff1c9'];
