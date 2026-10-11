@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Sahil weds Aishwarya | 24 November 2026</title>
+<meta name="description" content="You are cordially invited to the wedding of Sahil and Aishwarya. Tuesday, 24 November 2026, Chandrapur.">
+<meta name="theme-color" content="#14163a">
+<meta property="og:title" content="Sahil weds Aishwarya">
+<meta property="og:description" content="Wedding: 24 Nov 2026, Chandrapur. Reception: 25 Nov 2026, Nagpur.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🪷</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Pinyon+Script&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#14163a;--ink2:#1d2050;--ivory:#f7f1e3;--gold:#c9a24a;--gold2:#e8cf8c;--saffron:#d9822b;--text:#2a2a3d;
+--script:'Pinyon Script','Snell Roundhand',cursive;--serif:'Cormorant Garamond',Georgia,'Times New Roman',serif}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--serif);background:var(--ivory);color:var(--text);font-size:1.22rem;line-height:1.6;overflow-x:hidden}
+body.locked{overflow:hidden;height:100vh}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--saffron);outline-offset:3px}
+
+/* ---------- Cover ---------- */
+#cover{position:fixed;inset:0;z-index:50;background:radial-gradient(ellipse at 50% 35%,var(--ink2),var(--ink) 70%);color:var(--ivory);
+display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:2rem;
+transition:transform 1.4s cubic-bezier(.77,0,.18,1),opacity 1.4s}
+#cover.open{transform:translateY(-100%);opacity:.4;pointer-events:none}
+#cover .frame{position:absolute;inset:14px;border:1px solid var(--gold);opacity:.6}
+#cover .frame::after{content:"";position:absolute;inset:6px;border:1px solid var(--gold);opacity:.5}
+.chakra{width:min(46vw,170px);color:var(--gold);animation:spin 60s linear infinite;filter:drop-shadow(0 0 18px rgba(201,162,74,.45))}
+@keyframes spin{to{transform:rotate(360deg)}}
+.namo{font-size:1.05rem;letter-spacing:.35em;color:var(--gold2);margin:1.2rem 0 .4rem}
+.cover-names{font-family:var(--script);font-size:clamp(3rem,13vw,5.6rem);line-height:1.1;color:var(--ivory)}
+.cover-names small{display:block;font-family:var(--serif);font-style:italic;font-size:1.3rem;color:var(--gold2);margin:.1rem 0}
+.cover-for{margin-top:1.3rem;font-style:italic;color:var(--gold2)}
+.cover-for b{font-weight:600;color:var(--ivory)}
+.btn{display:inline-block;margin-top:1.8rem;padding:.85rem 2.2rem;border:1px solid var(--gold);background:transparent;color:var(--ivory);
+font:inherit;font-size:1.1rem;letter-spacing:.2em;cursor:pointer;text-decoration:none;position:relative;overflow:hidden;transition:color .4s}
+.btn::before{content:"";position:absolute;inset:0;background:var(--gold);transform:translateY(101%);transition:transform .4s;z-index:-1}
+.btn:hover,.btn:focus-visible{color:var(--ink)}
+.btn:hover::before,.btn:focus-visible::before{transform:none}
+.btn.dark{color:var(--ink);border-color:var(--ink)}
+.btn.dark::before{background:var(--ink)}
+.btn.dark:hover{color:var(--ivory)}
+.pulse{animation:pulse 2.4s ease-in-out infinite}
+@keyframes pulse{50%{box-shadow:0 0 0 10px rgba(201,162,74,0)}0%{box-shadow:0 0 0 0 rgba(201,162,74,.5)}}
+
+/* ---------- Petals ---------- */
+#petals{position:fixed;inset:0;pointer-events:none;z-index:40;overflow:hidden}
+.petal{position:absolute;top:-30px;width:12px;height:16px;border-radius:80% 0 80% 0;opacity:.85;animation:fall linear forwards}
+@keyframes fall{to{transform:translate3d(var(--dx),110vh,0) rotate(var(--rot))}}
+
+/* ---------- Hero ---------- */
+section{position:relative;padding:5.5rem 1.4rem;text-align:center}
+.wrap{max-width:640px;margin:auto}
+.hero{min-height:100vh;display:flex;align-items:center;background:var(--ivory);
+background-image:radial-gradient(circle at 50% 0,rgba(201,162,74,.18),transparent 55%)}
+.invite{font-size:1.25rem;font-style:italic}
+.invite strong{display:block;font-style:normal;font-weight:600;letter-spacing:.06em;margin:.4rem 0;font-size:1.45rem;color:var(--ink)}
+.name{font-family:var(--script);font-size:clamp(3.8rem,16vw,6.4rem);line-height:1.05;color:var(--ink)}
+.parents{font-size:1.1rem;margin-bottom:.3rem}
+.weds{font-size:1.3rem;letter-spacing:.35em;color:var(--saffron);margin:1.4rem 0 .6rem;font-weight:600}
+.divider{display:flex;align-items:center;gap:.8rem;margin:2rem auto;max-width:420px;color:var(--gold)}
+.divider::before,.divider::after{content:"";flex:1;height:1px;background:linear-gradient(90deg,transparent,var(--gold))}
+.divider::after{transform:scaleX(-1)}
+.divider svg{width:34px;flex:none}
+.scroll{position:absolute;bottom:1.6rem;left:50%;translate:-50% 0;color:var(--gold);animation:bob 2s ease-in-out infinite;text-decoration:none;font-size:.95rem;letter-spacing:.2em}
+@keyframes bob{50%{transform:translateY(8px)}}
+
+/* ---------- Countdown ---------- */
+.count{background:var(--ink);color:var(--ivory)}
+.count h2,.events h2,.wishes h2{font-family:var(--script);font-weight:400;font-size:2.6rem;color:var(--gold2);margin-bottom:1.6rem}
+.clock{display:grid;grid-template-columns:repeat(4,1fr);gap:.8rem;max-width:480px;margin:auto}
+.clock div{border:1px solid rgba(201,162,74,.5);padding:1rem .2rem;border-radius:50% 50% 8px 8px / 38% 38% 8px 8px}
+.clock b{display:block;font-size:2.3rem;font-weight:600;line-height:1;color:var(--gold2);font-variant-numeric:tabular-nums}
+.clock span{font-size:.95rem;font-style:italic}
+.count p.sub{margin-top:1.4rem;font-style:italic;color:var(--gold2)}
+
+/* ---------- Events ---------- */
+.events{background:var(--ivory)}
+.events h2{color:var(--ink)}
+.event{background:#fffaf0;border:1px solid var(--gold);padding:2.6rem 1.6rem 2.2rem;margin:2.2rem auto;max-width:560px;position:relative;box-shadow:0 18px 40px -22px rgba(20,22,58,.4)}
+.event::before{content:"";position:absolute;inset:7px;border:1px solid rgba(201,162,74,.45);pointer-events:none}
+.event h3{font-family:var(--script);font-weight:400;font-size:2.7rem;color:var(--ink);line-height:1.1}
+.when{font-weight:600;font-size:1.3rem;margin-top:.5rem;color:var(--saffron)}
+.time{font-style:italic}
+.venue{margin-top:1rem}
+.venue b{display:block;font-size:1.3rem;letter-spacing:.08em;color:var(--ink)}
+.venue address{font-style:normal;font-size:1.1rem}
+.event .row{display:flex;gap:.7rem;justify-content:center;flex-wrap:wrap}
+.event .btn{font-size:.95rem;padding:.7rem 1.2rem;margin-top:1.3rem}
+
+/* ---------- Memory & wishes ---------- */
+.memory{background:var(--ink2);color:var(--ivory)}
+.memory p.q{font-style:italic;font-size:1.3rem;color:var(--gold2)}
+.memory .lotus{width:58px;color:var(--gold);margin:0 auto 1rem;display:block}
+.memory h2{font-family:var(--script);font-weight:400;font-size:2.4rem;margin-bottom:.6rem}
+.memory .names{margin-top:.8rem;font-size:1.3rem;letter-spacing:.04em}
+.wishes{background:var(--ivory)}
+.wishes h2{color:var(--ink)}
+.wishes .fam{font-weight:600;font-size:1.4rem;color:var(--ink)}
+.wishes .kids{margin-top:.5rem;font-style:italic}
+.rsvp{margin-top:2.8rem;padding-top:2rem;border-top:1px solid rgba(201,162,74,.6)}
+.rsvp p{font-size:1.1rem}
+.rsvp .from{font-weight:600;color:var(--ink)}
+footer{background:var(--ink);color:var(--gold2);text-align:center;padding:2rem 1rem calc(2rem + env(safe-area-inset-bottom,0px));font-style:italic;font-size:1rem}
+
+/* ---------- Reveal ---------- */
+.rv{opacity:0;transform:translateY(26px);transition:opacity 1s,transform 1s cubic-bezier(.2,.7,.2,1)}
+.rv.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){
+*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}#petals{display:none}html{scroll-behavior:auto}}
+</style>
+</head>
+<body class="locked">
+
+<!-- Reusable SVG symbols -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+<defs>
+<symbol id="chakra" viewBox="0 0 100 100"><g fill="none" stroke="currentColor" stroke-width="1.6">
+<circle cx="50" cy="50" r="46"/><circle cx="50" cy="50" r="40" stroke-width=".8"/><circle cx="50" cy="50" r="6" fill="currentColor"/>
+<g id="sp"><path d="M50 10 L50 44" stroke-width="1.4"/><circle cx="50" cy="7" r="2" fill="currentColor" stroke="none"/></g>
+<use href="#sp" transform="rotate(15 50 50)"/><use href="#sp" transform="rotate(30 50 50)"/><use href="#sp" transform="rotate(45 50 50)"/><use href="#sp" transform="rotate(60 50 50)"/><use href="#sp" transform="rotate(75 50 50)"/><use href="#sp" transform="rotate(90 50 50)"/><use href="#sp" transform="rotate(105 50 50)"/><use href="#sp" transform="rotate(120 50 50)"/><use href="#sp" transform="rotate(135 50 50)"/><use href="#sp" transform="rotate(150 50 50)"/><use href="#sp" transform="rotate(165 50 50)"/><use href="#sp" transform="rotate(180 50 50)"/><use href="#sp" transform="rotate(195 50 50)"/><use href="#sp" transform="rotate(210 50 50)"/><use href="#sp" transform="rotate(225 50 50)"/><use href="#sp" transform="rotate(240 50 50)"/><use href="#sp" transform="rotate(255 50 50)"/><use href="#sp" transform="rotate(270 50 50)"/><use href="#sp" transform="rotate(285 50 50)"/><use href="#sp" transform="rotate(300 50 50)"/><use href="#sp" transform="rotate(315 50 50)"/><use href="#sp" transform="rotate(330 50 50)"/><use href="#sp" transform="rotate(345 50 50)"/>
+</g></symbol>
+<symbol id="lotus" viewBox="0 0 60 40"><g fill="none" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round">
+<path d="M30 36 C22 28 22 14 30 4 C38 14 38 28 30 36Z"/><path d="M30 36 C18 33 10 24 8 12 C20 14 28 22 30 36Z"/><path d="M30 36 C42 33 50 24 52 12 C40 14 32 22 30 36Z"/>
+<path d="M30 36 C14 38 4 34 1 26 C12 24 24 28 30 36Z"/><path d="M30 36 C46 38 56 34 59 26 C48 24 36 28 30 36Z"/></g></symbol>
+</defs></svg>
+
+<!-- Cover -->
+<div id="cover" role="dialog" aria-label="Wedding invitation cover">
+  <div class="frame"></div>
+  <svg class="chakra" aria-hidden="true"><use href="#chakra"/></svg>
+  <p class="namo">NAMO BUDDHAY</p>
+  <h1 class="cover-names">Sahil<small>weds</small>Aishwarya</h1>
+  <p class="cover-for" id="forLine" hidden>A special invitation for <b id="guest"></b></p>
+  <button class="btn pulse" id="openBtn">OPEN INVITATION</button>
+</div>
+
+<div id="petals" aria-hidden="true"></div>
+
+<main>
+<!-- Hero -->
+<section class="hero" id="top">
+  <div class="wrap">
+    <div class="rv">
+      <svg width="64" height="64" style="color:var(--gold);margin-bottom:.8rem" aria-hidden="true"><use href="#chakra"/></svg>
+      <p class="namo" style="color:var(--saffron);letter-spacing:.3em;font-size:1rem">NAMO BUDDHAY</p>
+      <p class="invite">With immense joy &amp; heartfelt gratitude,
+        <strong>Mrs. Indira &amp; Mr. Vijay Ramteke</strong>
+        cordially invite you along with your family, to celebrate the wedding of their beloved son</p>
+    </div>
+    <div class="divider rv"><svg viewBox="0 0 60 40"><use href="#lotus"/></svg></div>
+    <div class="rv">
+      <h2 class="name">Sahil</h2>
+      <p class="parents">S/o Mrs. Indira &amp; Mr. Vijay Ramteke<br>Nagpur</p>
+      <p class="weds">WEDS</p>
+      <h2 class="name">Aishwarya</h2>
+      <p class="parents">D/o Mrs. Lata &amp; Mr. Anil Meshram<br>Tukum, Chandrapur</p>
+    </div>
+  </div>
+  <a class="scroll" href="#count" aria-label="Scroll down">&#8964;</a>
+</section>
+
+<!-- Countdown -->
+<section class="count" id="count">
+  <div class="wrap rv">
+    <h2>Counting down to our day</h2>
+    <div class="clock" role="timer" aria-live="off">
+      <div><b id="d">--</b><span>days</span></div>
+      <div><b id="h">--</b><span>hours</span></div>
+      <div><b id="m">--</b><span>minutes</span></div>
+      <div><b id="s">--</b><span>seconds</span></div>
+    </div>
+    <p class="sub" id="cmsg">Tuesday, 24th November 2026 at 12:15 PM</p>
+  </div>
+</section>
+
+<!-- Events -->
+<section class="events" id="events">
+  <div class="wrap">
+    <h2 class="rv">Join us for the celebrations</h2>
+
+    <article class="event rv">
+      <h3>Wedding Ceremony</h3>
+      <p class="when">Tuesday, 24th November 2026</p>
+      <p class="time">At 12:15 P.M. onwards</p>
+      <div class="venue">
+        <b>YASHOGANGA CELEBRATION HALL</b>
+        <address>Samadhan Purti Bazaar, Chandrapur-Durgapur Road,<br>Near Law College, Nirman Nagar,<br>Tukum, Chandrapur</address>
+      </div>
+      <div class="row">
+        <a class="btn dark" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Yashoganga+Celebration+Hall+Samadhan+Purti+Bazaar+Nirman+Nagar+Tukum+Chandrapur">VIEW MAP</a>
+        <a class="btn dark" target="_blank" rel="noopener" href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Sahil+weds+Aishwarya+-+Wedding+Ceremony&dates=20261124T064500Z/20261124T103000Z&location=Yashoganga+Celebration+Hall,+Nirman+Nagar,+Tukum,+Chandrapur&details=Wedding+of+Sahil+and+Aishwarya">ADD TO CALENDAR</a>
+      </div>
+    </article>
+
+    <article class="event rv">
+      <h3>Reception Ceremony</h3>
+      <p class="when">Wednesday, 25th November 2026</p>
+      <p class="time">At 07:00 P.M. onwards</p>
+      <div class="venue">
+        <b>GANESH LAWN</b>
+        <address>A-130, Pannase Layout,<br>Last Bus Stop, Nagpur - 440022</address>
+      </div>
+      <div class="row">
+        <a class="btn dark" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Ganesh+Lawn+Pannase+Layout+Last+Bus+Stop+Nagpur+440022">VIEW MAP</a>
+        <a class="btn dark" target="_blank" rel="noopener" href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Sahil+weds+Aishwarya+-+Reception&dates=20261125T133000Z/20261125T170000Z&location=Ganesh+Lawn,+Pannase+Layout,+Nagpur+440022&details=Reception+of+Sahil+and+Aishwarya">ADD TO CALENDAR</a>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- In loving memory -->
+<section class="memory">
+  <div class="wrap rv">
+    <svg class="lotus" viewBox="0 0 60 40" aria-hidden="true"><use href="#lotus"/></svg>
+    <h2>In Loving Memory</h2>
+    <p class="q">Forever in our hearts, always a part of our journey.</p>
+    <p class="names">Tikaramji Ramteke &nbsp;&bull;&nbsp; Tarabai Ramteke &nbsp;&bull;&nbsp; Mahesh Ramteke</p>
+  </div>
+</section>
+
+<!-- Wishes + RSVP -->
+<section class="wishes">
+  <div class="wrap rv">
+    <h2>With Warmest Wishes From</h2>
+    <p class="fam">The Ramteke Family</p>
+    <p>Mrs. Mangala Ramteke</p>
+    <p>Mrs. Bharti Ramteke &amp; Mrs. Nilesh Ramteke</p>
+    <p class="kids">Arya &bull; Adviti &bull; Navya &bull; Ananya &bull; Aarush</p>
+
+    <div class="rsvp">
+      <p>Your presence will make our day complete.</p>
+      <p class="from" style="margin-top:.8rem">Smit Nilesh Ramteke &amp; Tanmay Vijay Ramteke</p>
+      <p>71/A, Wahane Layout, Swalambi Nagar, Nagpur</p>
+      <div class="row" style="display:flex;gap:.7rem;justify-content:center;flex-wrap:wrap">
+        <a class="btn dark" id="wa" target="_blank" rel="noopener" href="https://wa.me/919673762011?text=Namo%20Buddhay!%20We%20will%20attend%20the%20wedding.">CONFIRM ON WHATSAPP</a>
+        <a class="btn dark" href="tel:+919673762011">CALL 96737 62011</a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>Sahil &amp; Aishwarya &bull; 24 &amp; 25 November 2026</footer>
+
+<script>
+(function(){
+  // Personalised greeting: yoursite.com/?to=Rahul+Sharma
+  var to=new URLSearchParams(location.search).get('to');
+  if(to){
+    document.getElementById('guest').textContent=to.slice(0,60);
+    document.getElementById('forLine').hidden=false;
+    var wa=document.getElementById('wa');
+    wa.href='https://wa.me/919673762011?text='+encodeURIComponent('Namo Buddhay! This is '+to.slice(0,60)+'. We will attend the wedding.');
+  }
+
+  // Petals
+  var box=document.getElementById('petals'),cols=['#e8a33d','#d9822b','#f3c969','#e7bfd0','#fff1c9'];
+  var reduce=matchMedia('(prefers-reduced-motion:reduce)').matches;
+  function petal(){
+    var p=document.createElement('i');p.className='petal';
+    var sz=8+Math.random()*10;
+    p.style.cssText='left:'+Math.random()*100+'vw;width:'+sz+'px;height:'+sz*1.3+'px;background:'+cols[Math.random()*cols.length|0]+
+      ';animation-duration:'+(6+Math.random()*6)+'s;--dx:'+(Math.random()*160-80)+'px;--rot:'+(Math.random()*720-360)+'deg';
+    box.appendChild(p);setTimeout(function(){p.remove()},13000);
+  }
+  function shower(n,gap){for(var i=0;i<n;i++)setTimeout(petal,i*gap)}
+
+  // Open cover
+  var cover=document.getElementById('cover');
+  document.getElementById('openBtn').addEventListener('click',function(){
+    cover.classList.add('open');document.body.classList.remove('locked');
+    if(!reduce){shower(70,60);var t=setInterval(petal,1100);setTimeout(function(){clearInterval(t)},40000)}
+    setTimeout(function(){cover.style.display='none';reveal()},1450);
+    window.scrollTo(0,0);
+  });
+
+  // Scroll reveal
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.15});
+  document.querySelectorAll('.rv').forEach(function(el,i){el.style.transitionDelay=(i%3)*.12+'s';io.observe(el)});
+  function reveal(){document.querySelectorAll('.hero .rv').forEach(function(e){e.classList.add('in')})}
+
+  // Countdown to 24 Nov 2026, 12:15 PM IST
+  var target=new Date('2026-11-24T12:15:00+05:30').getTime();
+  function pad(n){return n<10?'0'+n:n}
+  function tick(){
+    var diff=target-Date.now();
+    if(diff<=0){['d','h','m','s'].forEach(function(k){document.getElementById(k).textContent='00'});
+      document.getElementById('cmsg').textContent='Today is the day. Thank you for being part of it.';return}
+    document.getElementById('d').textContent=Math.floor(diff/864e5);
+    document.getElementById('h').textContent=pad(Math.floor(diff/36e5)%24);
+    document.getElementById('m').textContent=pad(Math.floor(diff/6e4)%60);
+    document.getElementById('s').textContent=pad(Math.floor(diff/1e3)%60);
+  }
+  tick();setInterval(tick,1000);
+})();
+</script>
+</body>
+</html>
