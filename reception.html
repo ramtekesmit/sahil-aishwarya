@@ -145,15 +145,9 @@ address{font-style:normal;font-size:1rem;margin-top:.3rem}
 .fin .btn.dk{color:var(--rose2);border-color:var(--rose)}.fin .btn.dk:hover{color:var(--night)}.fin .btn.dk::before{background:linear-gradient(100deg,var(--rose),var(--coral))}
 footer{background:var(--night);color:var(--rose);text-align:center;padding:1.8rem 1rem calc(1.8rem + env(safe-area-inset-bottom,0px));font-size:.85rem;letter-spacing:.2em}
 
-/* ---------- Music Button CSS ---------- */
 #musicBtn{position:fixed;right:max(14px,env(safe-area-inset-right,0px));bottom:max(14px,env(safe-area-inset-bottom,0px));z-index:60;width:48px;height:48px;border-radius:50%;border:1px solid var(--rose);background:rgba(20,6,26,.9);color:var(--rose2);cursor:pointer;display:none;align-items:center;justify-content:center}
-#musicBtn.show{display:flex}
-#musicBtn svg{width:22px;height:22px}
-#musicBtn .off{display:none}
-#musicBtn.muted .on{display:none}
-#musicBtn.muted .off{display:block}
-#musicBtn:not(.muted){animation:glow 3s infinite}
-
+#musicBtn.show{display:flex}#musicBtn svg{width:22px;height:22px}#musicBtn .off{display:none}
+#musicBtn.muted .on{display:none}#musicBtn.muted .off{display:block}#musicBtn:not(.muted){animation:glow 3s infinite}
 #langBtn{position:fixed;top:max(40px,calc(env(safe-area-inset-top,0px) + 34px));right:max(14px,env(safe-area-inset-right,0px));z-index:70;height:38px;padding:0 1rem;border-radius:20px;border:1px solid var(--rose);background:rgba(20,6,26,.9);color:var(--rose2);font:inherit;font-size:.9rem;cursor:pointer}
 
 html[lang=mr]{--disp:'Noto Serif Devanagari',serif;--body:'Noto Sans Devanagari',sans-serif}
@@ -192,7 +186,7 @@ html[lang=mr] .card::before,html[lang=mr] .card::after{top:230px}
   </div>
 </div>
 
-<!-- ---------- Background Music Tag & Button ---------- -->
+<!-- Put your music file next to this page and name it music.mp3 -->
 <audio id="bgm" src="music.mp3" loop preload="auto"></audio>
 <button id="musicBtn" aria-label="Mute or unmute music" title="Music on/off">
   <svg class="on" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l11-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="17" cy="16" r="3"/></svg>
@@ -399,37 +393,20 @@ html[lang=mr] .card::before,html[lang=mr] .card::after{top:230px}
     requestAnimationFrame(loop)})();
   document.addEventListener('click',function(ev){if(ev.target.closest&&!ev.target.closest('form,input,textarea,a,button'))confetti(ev.clientX,ev.clientY,24)});
 
-  // ---------- Background Music JS Logic ----------
-  var bgm=$('bgm'),mb=$('musicBtn');
-  bgm.volume=.5;
+  // Music (starts on the open tap)
+  var bgm=$('bgm'),mb=$('musicBtn');bgm.volume=.5;
   function setMuted(m){mb.classList.toggle('muted',m)}
-  
-  // Toggle music on click
-  mb.addEventListener('click',function(){
-    if(bgm.paused){bgm.play();setMuted(false)}else{bgm.pause();setMuted(true)}
-  });
-  
-  // Auto pause when switching tabs
+  mb.addEventListener('click',function(){if(bgm.paused){bgm.play();setMuted(false)}else{bgm.pause();setMuted(true)}});
   document.addEventListener('visibilitychange',function(){
     if(document.hidden&&!bgm.paused){bgm.pause();bgm.dataset.auto='1'}
-    else if(!document.hidden&&bgm.dataset.auto){bgm.dataset.auto='';bgm.play()}
-  });
+    else if(!document.hidden&&bgm.dataset.auto){bgm.dataset.auto='';bgm.play()}});
 
-  // Open Cover and Start Music
+  // Open
   $('openBtn').addEventListener('click',function(){
-    var p=bgm.play();
-    if(p&&p.then) {
-      p.then(function(){ mb.classList.add('show'); setMuted(false) }).catch(function(){});
-    }
-    $('cover').classList.add('open');
-    document.body.classList.remove('locked');
-    document.body.classList.add('lit');
-    window.scrollTo(0,0);
+    var p=bgm.play();if(p&&p.then)p.then(function(){mb.classList.add('show');setMuted(false)}).catch(function(){});
+    $('cover').classList.add('open');document.body.classList.remove('locked');document.body.classList.add('lit');window.scrollTo(0,0);
     [0,300,650,1000].forEach(function(d,k){setTimeout(function(){confetti(W*(.2+.2*k),H*.5,70)},d)});
-    setTimeout(function(){
-      document.querySelectorAll('.hero .rv').forEach(function(x){x.classList.add('in')});
-      $('cover').style.display='none';
-    }, 1000);
+    setTimeout(function(){document.querySelectorAll('.hero .rv').forEach(function(x){x.classList.add('in')});$('cover').style.display='none'},1000);
   });
 
   // Reveal, progress bar, ticket tilt
