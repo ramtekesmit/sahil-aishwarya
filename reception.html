@@ -33,7 +33,7 @@ background:radial-gradient(circle at 50% 40%,#3b1540,var(--night) 70%);clip-path
 #cover.open{clip-path:circle(0% at 50% 50%);pointer-events:none}
 .seal{width:min(70vw,280px);aspect-ratio:1;margin:0 auto 1.2rem;filter:drop-shadow(0 0 28px rgba(227,183,160,.35));animation:breathe 4s ease-in-out infinite}
 @keyframes breathe{50%{transform:scale(1.04)}}
-.seal .ring{transform-box:fill-box;transform-origin:center;animation:spin 40s linear infinite}
+.seal .ring{transform-origin:150px 150px;animation:spin 40s linear infinite}
 @keyframes spin{to{transform:rotate(360deg)}}
 .mono{font-family:var(--disp);font-style:italic;font-size:64px;fill:none;stroke:var(--rose);stroke-width:1.1;stroke-dasharray:420;stroke-dashoffset:420;animation:draw 3.2s .4s forwards,fillin 1.2s 3s forwards}
 @keyframes draw{to{stroke-dashoffset:0}}@keyframes fillin{to{fill:var(--rose)}}
